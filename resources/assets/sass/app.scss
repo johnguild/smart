@@ -1,0 +1,110 @@
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Droid Sans';
+    font-weight: 100;
+    height: 100vh;
+    margin: 0;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+pre{
+    display: block;
+    margin: 0 0 11px;
+    font-size: 13px;
+    line-height: 1.1;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #333333;
+    border: none;
+}
+
+.account-show > a, .account-show > form{
+    float: left;
+    margin-right: 4px;
+}
+
+.account-container{
+    border: solid #777 2px;
+    border-radius: 6px;
+    margin-top: 4px;
+    padding: 3px;
+    height: auto;
+}
+
+.account-link{
+    color: #777 !important;
+}
+
+.account-link:hover{
+    color: lightblue !important;
+}
+
+.plain-link:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.account-monthly-breakdown{
+    color: #777;
+}
+
+.bank-action{
+    padding: 4px;
+    color: #fff !important;
+}
+
+.bank-action:hover{
+    text-decoration: none;
+}
