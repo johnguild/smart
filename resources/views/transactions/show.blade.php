@@ -8,11 +8,13 @@
 	<div class="container">
 		<div class="col-md-8 col-xs-12">
 			<div class="navbar-right account-show">
-				<form method="POST" action="{{ url('transactions/'.$transaction->id) }}" >
+				<!-- <form method="POST" action="{{ url('transactions/'.$transaction->id) }}" >
 					{{ method_field('DELETE') }}
 					{{ csrf_field() }}			
 					<input type="submit" name="submit" value="Delete" class="btn btn-danger">
-				</form>
+				</form> -->
+				@include('others.deleteitem',
+						['item_url'=>url('transactions/'), 'item_id'=>$transaction->id, 'item_name'=>'transaction'])
 			</div>
 			<h1>Details</h1>
 		
@@ -59,7 +61,7 @@
 			
 		</div>
 		
-		<div class="col-md-4">
+		<div class="col-md-4 col-xs-12 right-sidebar">
 			<br>
 			@include('home.maketransaction')
 			@include('home.accountbalances')

@@ -3,6 +3,10 @@
 @section('header')
 	<title>@if($account->name){{ $account->name }} - @endif
 	{{ ucfirst($account->month).' Report' }}</title>
+	<link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" >
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <link href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css" >
+    <script src="https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js"></script>
 @stop
 
 
@@ -33,7 +37,7 @@
 					<tbody>
 					@foreach( $account->transactions as $key => $transaction )
 						<tr>
-							<td>{{ date($transaction->transacted_at ) }}</td>
+							<td>{{ $transaction->transacted_at }}</td>
 							<td>{{ $transaction->balance }}</td>
 							<td>{{ $transaction->amount }}</td>
 							<td>{{ $transaction->earnings }}</td>
@@ -50,7 +54,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-4">
+		<div class="col-md-4 col-xs-12 right-sidebar">
 			<br>
 			@include('home.maketransaction')
 		</div>
@@ -60,7 +64,9 @@
 @section('script')
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('#transactiontable').DataTable();
+		$('#transactiontable').DataTable({
+			'responsive':true	
+		});
 	});
 </script>
 @stop

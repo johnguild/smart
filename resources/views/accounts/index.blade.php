@@ -24,7 +24,7 @@
     	<div style="clear:both;"></div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4 col-xs-12 right-sidebar">
     	<br>
         @include('home.maketransaction')
     </div>

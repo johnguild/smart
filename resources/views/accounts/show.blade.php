@@ -7,15 +7,21 @@
 @section('content')
 	<div class="container">
 		<div class="col-md-8">
-			<div class="navbar-right account-show">
-				<a href="{{ url('accounts/'.$account->id.'/edit') }}" class="btn btn-default" >Edit</a>
-				<form method="POST" action="{{ url('accounts/'.$account->id) }}" >
-					{{ method_field('DELETE') }}
-					{{ csrf_field() }}			
-					<input type="submit" name="submit" value="Delete" class="btn btn-danger">
-				</form>
-			</div>
-			<h1>{{ $account->name }}</h1>
+			
+			<h1>{{ $account->name }} 
+				<small>
+					<div class="navbar-right account-show">
+						<a href="{{ url('accounts/'.$account->id.'/edit') }}" class="btn btn-default" >Edit</a>
+						<!-- <form method="POST" action="{{ url('accounts/'.$account->id) }}" >
+							{{ method_field('DELETE') }}
+							{{ csrf_field() }}			
+							<input type="submit" name="submit" value="Delete" class="btn btn-danger">
+						</form> -->
+						@include('others.deleteitem',
+								['item_url'=>url('accounts/'), 'item_id'=>$account->id, 'item_name'=>'account'])
+					</div>
+				</small>
+			</h1>
 			
 			Account number : <strong>{{ $account->account_number }}</strong><br>
 			Mobile number : <strong>{{ $account->mobile_number }}</strong><br>
@@ -35,7 +41,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-4">
+		<div class="col-md-4 col-xs-12 right-sidebar">
 			<br>
             @include('home.maketransaction')
         </div>
@@ -54,6 +60,7 @@
                 panel.find('.breakdown-table').toggle('1000');
             });
         });
+
     });
 </script>
 @stop

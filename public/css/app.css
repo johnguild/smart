@@ -5768,11 +5768,14 @@ button.close {
 
 html, body {
   background-color: #fff;
-  color: #636b6f;
+  color: #fff;
   font-family: 'Droid Sans';
   font-weight: 100;
   height: 100vh;
   margin: 0; }
+
+body {
+  color: #636b6f; }
 
 .full-height {
   height: 100vh; }
@@ -5800,7 +5803,6 @@ html, body {
   font-size: 84px; }
 
 .links > a {
-  color: #636b6f;
   padding: 0 25px;
   font-size: 12px;
   font-weight: 600;
@@ -5820,6 +5822,58 @@ pre {
   word-wrap: break-word;
   color: #333333;
   border: none; }
+
+body > .container {
+  margin-top: 90px; }
+
+.right-sidebar {
+  position: fixed;
+  margin-right: 20px;
+  right: 15px; }
+
+@media (max-width: 768px) {
+  .right-sidebar {
+    position: relative;
+    margin-right: 0;
+    right: 0; } }
+
+/* custom */
+nav .navbar-default {
+  border: none !important;
+  background-image: none; }
+
+.navbar-brand {
+  padding-top: 25px;
+  padding-bottom: 20px; }
+
+.navbar-default .navbar-nav > li > a {
+  padding: 34px 13px;
+  color: #fff; }
+
+nav .container {
+  background-color: #0DB24B;
+  height: 90px; }
+
+.navbar-default {
+  background-image: -webkit-linear-gradient(top, #fff 0, #0DB24B 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#0DB24B), to(#0DB24B));
+  background-repeat: repeat-x;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 5px rgba(0, 0, 0, 0.075); }
+
+@media (max-width: 736px) {
+  nav .container {
+    height: 45px; }
+  .navbar-nav {
+    margin: 0px -15px; }
+  .navbar-brand {
+    padding-top: 1px;
+    padding-bottom: 1px; }
+  .navbar-default .navbar-nav > li > a {
+    padding: 4px 1px;
+    background-color: #0DB24B; }
+  .navbar-default .navbar-nav > li > a:hover {
+    background-color: #0DB24B; } }
 
 .account-show > a, .account-show > form {
   float: left;
@@ -5851,5 +5905,21 @@ pre {
 
 .bank-action:hover {
   text-decoration: none; }
+
+.main-btn {
+  font-weight: 100;
+  border-radius: 6px;
+  padding: 8px;
+  background: #0DB24B;
+  border-color: #81C784;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3); }
+
+.main-btn:hover {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0DB24B), to(#0b9a41));
+  background: -webkit-linear-gradient(0% 0%, 0% 100%, from(#0DB24B), to(#0b9a41));
+  background: -webkit-linear-gradient(#0DB24B, #0b9a41);
+  background: linear-gradient(#0DB24B, #0b9a41);
+  color: #fff; }
 
 /*# sourceMappingURL=app.css.map */

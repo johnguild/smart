@@ -10,11 +10,15 @@
 
 html, body {
     background-color: #fff;
-    color: #636b6f;
+    color: #fff;
     font-family: 'Droid Sans';
     font-weight: 100;
     height: 100vh;
     margin: 0;
+}
+
+body{
+    color: #636b6f;
 }
 
 .full-height {
@@ -46,7 +50,6 @@ html, body {
 }
 
 .links > a {
-    color: #636b6f;
     padding: 0 25px;
     font-size: 12px;
     font-weight: 600;
@@ -69,6 +72,82 @@ pre{
     color: #333333;
     border: none;
 }
+
+body > .container{
+    margin-top: 90px;
+}
+
+
+.right-sidebar{
+    position: fixed;
+    margin-right: 20px;
+    right: 15px;
+}
+
+@media(max-width:768px){
+    .right-sidebar{
+        position: relative;
+        margin-right: 0;
+        right: 0;    
+    }
+}
+
+
+/* custom */
+nav .navbar-default{
+    border: none !important;
+    background-image: none;
+}
+
+.navbar-brand{
+    padding-top: 25px;
+    padding-bottom: 20px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    padding: 34px 13px;
+    color: #fff;
+}
+
+nav .container{
+    background-color: $main-color;
+    height: 90px;
+}
+
+.navbar-default {
+    background-image: -webkit-linear-gradient(top,#fff 0,$main-color 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from($main-color),to($main-color));
+    background-repeat: repeat-x;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 5px rgba(0,0,0,.075); 
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 5px rgba(0,0,0,.075); 
+}
+
+
+@media(max-width:736px){
+    nav .container{
+        height: 45px;
+    }
+
+    .navbar-nav{
+        margin: 0px -15px;
+    }
+
+    .navbar-brand{
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+
+    .navbar-default .navbar-nav > li > a {
+        padding: 4px 1px;
+        background-color: $main-color;
+    }
+
+    .navbar-default .navbar-nav > li > a:hover {
+        background-color: $main-color;
+    }
+}
+
 
 .account-show > a, .account-show > form{
     float: left;
@@ -107,4 +186,22 @@ pre{
 
 .bank-action:hover{
     text-decoration: none;
+}
+
+.main-btn{
+    font-weight: 100;
+    border-radius: 6px;
+    padding: 8px;
+    background: $main-color;
+    border-color: #81C784;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+}
+
+.main-btn:hover{
+    background: -webkit-gradient(linear,0% 0%,0% 100%,from($main-color),to($btn-start-color));
+    background: -webkit-linear-gradient(0% 0%,0% 100%,from($main-color),to($btn-start-color));
+    background: -moz-linear-gradient(center top,$main-color,$btn-start-color);
+    background: linear-gradient($main-color,$btn-start-color);
+    color: #fff;
 }

@@ -10,12 +10,9 @@
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" >
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 
     @yield('header')
 
@@ -32,7 +29,7 @@
 </head>
 <body>
     @if(Auth::user())
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
 
@@ -46,23 +43,23 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <img src="{{url('/')}}/images/logo-new.svg">
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('rates/') }}">Rates</a></li>
-                    <li><a href="{{ url('transactions/') }}">Transactions</a></li>
-                    <li><a href="{{ url('accounts/') }}">Accounts</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     
-                    <li><input type="text" placeholder="Search by account #, mobile #, date" class="form-control" style="margin-top:7px; min-width: 300px;"></li>
+                    <li><a href="{{ url('rates/') }}">Rates</a></li>
+                    <li><a href="{{ url('transactions/') }}">Transactions</a></li>
+                    <li><a href="{{ url('accounts/') }}">Accounts</a></li>
+                    <!-- <li><input type="text" placeholder="Search by account #, mobile #, date" class="form-control" style="margin-top:7px; min-width: 300px;"></li> -->
                     <li>
                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}

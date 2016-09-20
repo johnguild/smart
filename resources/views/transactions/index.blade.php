@@ -2,6 +2,11 @@
 
 @section('header')
 	<title>Transactions</title>
+    <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" >
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <link href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css" >
+    <script src="https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js"></script>
+
 @stop
 
 @section('content')
@@ -17,7 +22,9 @@
 @section('script')
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('#transactiontable').DataTable();
+		$('#transactiontable').DataTable({
+			'responsive':true	
+		});
 	});
 </script>
 @stop
