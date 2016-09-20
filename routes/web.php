@@ -11,7 +11,7 @@
 |
 */
 
-date_default_timezone_set('Asia/Manila');
+
 
 Route::get('/', function () {
 	if(Auth::user()){

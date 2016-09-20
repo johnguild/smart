@@ -12,7 +12,7 @@
             </div>
 
             <div class="links">
-                <p>Easy and Secured. End the fruit of your hardwork to love ones</p>
+                <p>Easy and Secured. Send the fruit of your hardwork to love ones</p>
             </div>
         </div>
     </div>
