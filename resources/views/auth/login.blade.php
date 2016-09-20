@@ -7,8 +7,8 @@
 @section('content')
  <div class="flex-center position-ref full-height">
     <div class="row">
-            <div class="panel panel-default">
-                <div class="panel-heading text-center">Smart Padala</div>
+            <div class="panel panel-success">
+                <div class="text-center" style="background-color:#0DB24B; padding:20px;"><img src="{{url('/')}}/images/logo-new.svg"></div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
@@ -43,7 +43,7 @@
 
                         <div class="form-group">
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary col-md-12">
+                                <button type="submit" class="main-btn plain-link col-md-12">
                                     Login
                                 </button>
                             </div>

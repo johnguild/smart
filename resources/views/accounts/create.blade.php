@@ -5,6 +5,7 @@
 @stop
 
 @section('content')
+    <br>
 	<div class="container">
         <div class="col-md-8 col-xs-12">
         	<form method="POST" action="{{ url('accounts') }}" class="form">

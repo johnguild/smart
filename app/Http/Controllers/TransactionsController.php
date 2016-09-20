@@ -46,6 +46,9 @@ class TransactionsController extends Controller
      */
     public function store(Request $request) {
 
+        $this->validate($request, [
+                'account_id' => 'required',
+            ]);
         $account = Account::find($request['account_id']);
 
         if($request['type'] == 'padala'){
@@ -57,7 +60,6 @@ class TransactionsController extends Controller
         $this->validate($request, [
                 'transacted_at' => 'date|required',
                 'type' => 'required',
-                'account_id' => 'required',
                 'mobile_reciever'=> 'required|numeric',
                 'reference' =>  'required|numeric',
                 'amount'    =>  $amountvalidation
