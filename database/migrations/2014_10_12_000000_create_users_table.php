@@ -26,8 +26,8 @@ class CreateUsersTable extends Migration
 
         $user = new User;
         $user->username = 'smartadmin';
-        $user->email = 'smartpadala@gmail.com.ph';
-        $user->password = bcrypt('basic101');
+        $user->email = 'admin@smartpadala.com';
+        $user->password = bcrypt('nextvation123');
         $user->save();
     }
 

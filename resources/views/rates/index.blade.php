@@ -22,15 +22,10 @@
     	@foreach( $rates as $rate )
     		<tr>
     			<td class="text-center">{{ number_format($rate->min, 2) }}</td>
-    			<td class="text-center">{{ number_format($rate->max, 2) }}</td>
+    			<td class="text-center">{{ number_format($rate->max, 2) }}@if ($loop->last)  <br>and above @endif</td>
     			<td class="text-center">{{ number_format($rate->amount, 2) }}</td>
     		</tr>
     	@endforeach
-            <tr>
-                <td class="text-center">10500.01</td>
-                <td class="text-center">above</td>
-                <td class="text-center">2 % of amount</td>
-            </tr>
     	</tbody>
     	</table>
     </div>

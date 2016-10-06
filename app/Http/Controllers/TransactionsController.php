@@ -65,8 +65,9 @@ class TransactionsController extends Controller
                 'amount'    =>  $amountvalidation
             ]);
 
-        if($request['amount'] > 10500){
-            $request['earnings'] = $request['amount'] * 0.02;
+        // FIX !!! the amount should be the last of the rates and earning/fee
+        if($request['amount'] > 50000){
+            $request['earnings'] = 1250.00;
         }else{
             $cost = Rate::whereRaw('min <= ? AND max >= ?', array($request['amount'],$request['amount']))->first(array('amount'));
             $request['earnings'] = $cost['amount'];

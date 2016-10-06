@@ -12,11 +12,8 @@
 @endif
 <script type="text/javascript">
 	$(document).ready(function(){
-
 		$('#error-close').click(function(){
 			$(this).parents('.error-container').slideToggle(300);
 		})
-
 	});
-	
 </script>
