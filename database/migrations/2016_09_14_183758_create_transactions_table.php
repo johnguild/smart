@@ -20,7 +20,7 @@ class CreateTransactionsTable extends Migration
             $table->float('earnings');
             $table->string('reference');
             $table->timestamp('transacted_at');
-            $table->bigInteger('account_id')->unsigned();
+            $table->integer('account_id')->unsigned();
             $table->bigInteger('mobile_sender')->unsinged();
             $table->bigInteger('mobile_reciever')->unsinged();
             $table->float('balance');
