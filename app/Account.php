@@ -26,7 +26,7 @@ class Account extends Model
     public function monthlyTransactions( $month, $year, $sum = null ){
        
         if($sum){
-            return $this->transactions()->monthly($month, $year)->sum('earnings');
+            return $this->transactions()->monthly($month, $year)->get()->sum('earnings');     
         }
 
         return $this->transactions()->monthly($month, $year)->get();
