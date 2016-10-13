@@ -17,7 +17,7 @@ Route::get('/', function () {
 	if(Auth::user()){
 		return redirect('/home');
 	}
-
+		// return bcrypt('nextvation123');
     return view('auth.login');
 });
 

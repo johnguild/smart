@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="icon" sizes="16x16 32x32" href="images/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="images/favicon.png">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
@@ -77,6 +80,19 @@
     @endif
     @yield('content')
 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.account-monthly-total').each(function(){
+                var panel = $(this);
+                panel.find('.account-monthly-breakdown').click(function(){
+                    $(this).text(function(i, text){
+                        return text === "show breakdown" ? "hide breakdown" : "show breakdown";
+                    });
+                    panel.find('.breakdown-table').slideToggle('300');
+                });
+            });
+        });
+    </script>
     @yield('script')
 </body>
 </html>

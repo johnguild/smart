@@ -37,6 +37,14 @@
 					<td>{{ $transaction->account->account_number }}</td>
 				</tr>
 				<tr>
+					<td>Receivers' Mobile #</td>
+					<td>{{ $transaction->mobile_receiver }}</td>
+				</tr>
+				<tr>
+					<td>Receivers' Account #</td>
+					<td>{{ $transaction->accnumber_receiver }}</td>
+				</tr>
+				<tr>
 					<td>Reference #</td>
 					<td>{{ $transaction->reference }}</td>
 				</tr>

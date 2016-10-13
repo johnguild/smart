@@ -29,6 +29,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        
         // $transactions = Transaction::orderBy('created_at','desc')->take(10)->get();
         // $accounts = Account::basicInfo()->with('transactions')->get();
         $accounts = Account::basicInfo()->get();// retrieve all accounts

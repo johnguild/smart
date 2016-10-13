@@ -11,7 +11,7 @@ use Carbon\Carbon;
 class Transaction extends Model
 {
     protected $fillable = [
-    	'amount','type','earnings','reference','transacted_at','account_id','mobile_sender','mobile_reciever','balance','new_balance','closed'
+    	'amount','type','earnings','reference','transacted_at','account_id','mobile_sender','mobile_receiver','accnumber_receiver','balance','new_balance','closed'
     ];
     protected $dates = [
         'created_at',

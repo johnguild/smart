@@ -49,18 +49,5 @@
 @stop
 
 @section('script')
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('.account-monthly-total').each(function(){
-            var panel = $(this);
-            panel.find('.account-monthly-breakdown').click(function(){
-                $(this).text(function(i, text){
-                    return text === "show breakdown" ? "hide breakdown" : "show breakdown";
-                });
-                panel.find('.breakdown-table').toggle('1000');
-            });
-        });
 
-    });
-</script>
 @stop

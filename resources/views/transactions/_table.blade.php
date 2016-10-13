@@ -11,6 +11,7 @@
 		<th>New Balance</th>
 		<th>Type</th>
 		<th>Account Holder</th>
+		<th>Receivers' Account #</th>
 	</tr>
 </thead>
 <tbody>
@@ -26,6 +27,7 @@
 		<td>P {{ number_format($transaction->new_balance, 2) }}</td>
 		<td><a href="{{ url('transactions/'.$transaction->id) }}">{{ ucfirst($transaction->type) }}</a></td>
 		<td><a href="{{ url('accounts/'.$transaction->account->id) }}">{{ $transaction->account->name }}</a></td>
+		<td>{{ $transaction->accnumber_receiver }}</td>
 	</tr>
 @endforeach
 </tbody>

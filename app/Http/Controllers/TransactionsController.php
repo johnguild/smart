@@ -60,7 +60,8 @@ class TransactionsController extends Controller
         $this->validate($request, [
                 'transacted_at' => 'date|required',
                 'type' => 'required',
-                'mobile_reciever'=> 'required|numeric',
+                'mobile_receiver'=> 'required|numeric',
+                'accnumber_receiver'=> 'required|numeric',
                 'reference' =>  'required|numeric',
                 'amount'    =>  $amountvalidation
             ]);

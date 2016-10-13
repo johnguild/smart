@@ -22,7 +22,8 @@ class CreateTransactionsTable extends Migration
             $table->timestamp('transacted_at');
             $table->integer('account_id')->unsigned();
             $table->bigInteger('mobile_sender')->unsinged();
-            $table->bigInteger('mobile_reciever')->unsinged();
+            $table->bigInteger('mobile_receiver')->unsinged();
+            $table->bigInteger('accnumber_receiver')->unsinged();
             $table->float('balance');
             $table->float('new_balance');
             $table->boolean('closed');
