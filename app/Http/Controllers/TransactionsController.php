@@ -139,9 +139,21 @@ class TransactionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy( Transaction $transaction ) {
+    public function destroy( $id ) {
+
+        $transaction = Transaction::find($id);
+        $account = Account::find($transaction->account_id);
+        if($transaction->type == 'padala'){
+            $account->balance = $account->balance + $transaction->amount + $transaction->surcharge;
+        }else{
+            $account->balance = $account->balance - $transaction->amount;
+        }
         
-        $transaction->delete();
+
+        if($account->save()){
+            $transaction->delete();
+        }
+        
         return redirect('/transactions/');
     }
 

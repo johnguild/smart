@@ -30,7 +30,7 @@
 				</tr>
 				<tr>
 					<td>Account Holder</td>
-					<td>{{ $transaction->account->name }}</td>
+					<td><a href="{{url('accounts/'.$transaction->account_id)}}" class="plain-link">{{ $transaction->account->name }}</a></td>
 				</tr>
 				<tr>
 					<td>Account #</td>

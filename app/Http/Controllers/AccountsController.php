@@ -99,11 +99,11 @@ class AccountsController extends Controller
     public function update(Request $request, Account $account ) {
        
        $this->validate($request, [
-                'name'=>'required',
-                'account_number'=>'required|numeric',
-                'mobile_number'=>'required|numeric'
-            ]);
-
+            'name'=>'required',
+            'account_number'=>'required|numeric',
+            'mobile_number'=>'required|numeric'
+        ]);
+       
        $account->update($request->all());
        return redirect('/accounts/'.$account->id);
     }
