@@ -52,10 +52,12 @@
 	<input type="text" id="mobile-receiver" name="mobile_receiver" class="form-control col-xs-12" value="{{ $transaction->mobile_receiver or old('mobile_receiver') }}">
 </div>
 
+@if($type != "encashment")
 <div class="form-group">
 	<label for="accnumber-receiver">Receivers' Account Number</label>
 	<input type="text" id="accnumber-receiver" name="accnumber_receiver" class="form-control col-xs-12" value="{{ $transaction->accnumber_receiver or old('accnumber_receiver') }}">
 </div>
+@endif
 
 <div class="form-group">
 	<label for="reference">Reference</label>

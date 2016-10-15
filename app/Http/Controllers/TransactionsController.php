@@ -33,7 +33,7 @@ class TransactionsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create( $type = null) {
-
+        
         $accounts = Account::all();
         return view('transactions.create', ['accounts'=>$accounts,'type'=>$type]);
     }
@@ -61,7 +61,6 @@ class TransactionsController extends Controller
                 'transacted_at' => 'date|required',
                 'type' => 'required',
                 'mobile_receiver'=> 'required|numeric',
-                'accnumber_receiver'=> 'required|numeric',
                 'reference' =>  'required|numeric',
                 'amount'    =>  $amountvalidation
             ]);
