@@ -23,7 +23,7 @@ class CreateTransactionsTable extends Migration
             $table->integer('account_id')->unsigned();
             $table->bigInteger('mobile_sender');
             $table->bigInteger('mobile_receiver');
-            $table->bigInteger('accnumber_receiver')->nullable();
+            $table->string('accnumber_receiver')->nullable();
             $table->float('balance');
             $table->float('new_balance');
             $table->boolean('closed');
