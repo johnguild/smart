@@ -8,11 +8,18 @@ use App\Account;
 
 use Carbon\Carbon;
 
+use App\Surcharge;
+
 class Transaction extends Model
 {
     protected $fillable = [
-    	'amount','type','earnings','reference','transacted_at','account_id','mobile_sender','mobile_receiver','accnumber_receiver','balance','new_balance','surcharge','closed'
+    	'amount','type','earnings','reference','transacted_at','account_id','mobile_sender','mobile_receiver','accnumber_receiver','balance','new_balance','closed'
     ];
+
+    protected $appends = [
+        'surcharge'
+    ];
+
     protected $dates = [
         'created_at',
         'updated_at',
@@ -30,6 +37,14 @@ class Transaction extends Model
         return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('F j, Y g:i A');
     }   
 
+    public function getSurchargeAttribute( $surcharge ){
+        if($this->attributes['type'] == 'padala'){
+            return $this->attributes['surcharge'] = Surcharge::getSurcharge($this->attributes['amount']);
+        }else{
+            return $this->attributes['surcharge'] = 0.00;
+        }
+    }
+
   	public function account(  ){
       	return $this->belongsTo(Account::class);
     }
@@ -38,5 +53,7 @@ class Transaction extends Model
     	
     	$query->whereYear('transacted_at', $year)->whereMonth('transacted_at', $month );
     }
+
+
 
 }

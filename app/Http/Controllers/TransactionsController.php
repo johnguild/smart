@@ -87,7 +87,7 @@ class TransactionsController extends Controller
         }
 
         $request['new_balance'] = $new_balance;
-        $request['surcharge'] = $surcharge;
+        // $request['surcharge'] = $surcharge;
         $request['closed'] = 0;
 
         $transaction = Transaction::create($request->all());
