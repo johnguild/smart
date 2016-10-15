@@ -26,6 +26,7 @@ class CreateTransactionsTable extends Migration
             $table->string('accnumber_receiver')->nullable();
             $table->float('balance');
             $table->float('new_balance');
+            $table->float('surcharge')->default(0.00);
             $table->boolean('closed');
             $table->timestamps();
         });

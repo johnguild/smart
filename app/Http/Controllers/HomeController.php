@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Transaction;
-
 use App\Account;
+use App\Surcharge;
 
 use Carbon\Carbon;
 
@@ -29,7 +29,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         
         // $transactions = Transaction::orderBy('created_at','desc')->take(10)->get();
         // $accounts = Account::basicInfo()->with('transactions')->get();
@@ -37,7 +36,6 @@ class HomeController extends Controller
         $dt = Carbon::now();
         $totals = [];
         foreach($accounts as $key => $account){
-
             // get all monthly total, using carbon we determine the current year
             $monthly = [];
             for($m=12; $m>=1; $m--){

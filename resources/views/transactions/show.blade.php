@@ -57,8 +57,12 @@
 					<td>P {{ number_format($transaction->amount, 2) }}</td>
 				</tr>
 				<tr>
-					<td>Earning</td>
-					<td>P {{ number_format($transaction->earnings, 2) }}</td>
+					<td>Surcharge</td>
+					<td>P {{ number_format($transaction->surcharge, 2) }}</td>
+				</tr>
+				<tr>
+					<td><b class="earning">Earning</b></td>
+					<td><b class="earning">P {{ number_format($transaction->earnings, 2) }}</b></td>
 				</tr>
 				<tr>
 					<td><b>New Balance</b></td>

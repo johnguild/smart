@@ -1,7 +1,7 @@
 <table class="col-md-12">
 	<tr>
 		<td class="col-md-6 col-xs-12"><b>Total Earnings</b></td>
-		<td class="col-md-6 col-xs-12" style="text-align:center;font-size:14px;"><strong>P {{ number_format(array_sum($totals), 2) }}</strong></td>
+		<td class="col-md-6 col-xs-12" style="text-align:center;font-size:14px;"><span class="earning">P {{ number_format(array_sum($totals), 2) }}</span></td>
 	</tr>
 </table>
 <table class="table col-md-12 breakdown-table" style="display:none;">

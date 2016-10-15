@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
  use App\Transaction;
  use App\Account;
  use App\Rate;
+ use App\Surcharge;
 
 class TransactionsController extends Controller
 {
@@ -77,13 +78,16 @@ class TransactionsController extends Controller
         $request['mobile_sender'] = $account->mobile_number;
         $request['balance'] = $account->balance;
 
+        $surcharge = 0;
         if($request['type'] == 'padala'){
-            $new_balance = $account->balance - $request['amount'];
+            $surcharge = Surcharge::getSurcharge($request['amount']);
+            $new_balance = $account->balance - ($request['amount'] + $surcharge);
         }else if($request['type'] == 'encashment'){
             $new_balance = $account->balance + $request['amount'];
         }
-        
+
         $request['new_balance'] = $new_balance;
+        $request['surcharge'] = $surcharge;
         $request['closed'] = 0;
 
         $transaction = Transaction::create($request->all());

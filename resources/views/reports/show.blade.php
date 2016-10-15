@@ -26,6 +26,7 @@
 							<th>Date</th>
 							<th>Account Balance</th>
 							<th>Amount</th>
+							<th>Surcharge</th>
 							<th>Earning</th>
 							<th>New Balance</th>
 							<th>Type</th>
@@ -40,7 +41,8 @@
 							<td>{{ $transaction->transacted_at }}</td>
 							<td>{{ $transaction->balance }}</td>
 							<td>{{ $transaction->amount }}</td>
-							<td>{{ $transaction->earnings }}</td>
+							<td>{{ $transaction->surcharge }}</td>
+							<td><span class="earning">{{ $transaction->earnings }}</span></td>
 							<td>{{ $transaction->new_balance }}</td>
 							<td><a href="{{ url('transactions/'.$transaction->id) }}">{{ ucfirst($transaction->type) }}</a></td>
 							@if( !$account->name )
