@@ -82,6 +82,7 @@ class TransactionsController extends Controller
         if($request['type'] == 'padala'){
             $surcharge = Surcharge::getSurcharge($request['amount']);
             $new_balance = $account->balance - ($request['amount'] + $surcharge);
+            $request['earnings']  = $request['earnings'] - $surcharge;
         }else if($request['type'] == 'encashment'){
             $new_balance = $account->balance + $request['amount'];
         }
